@@ -1,0 +1,32 @@
+<!-- templates/earthquakes/search_results.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <style>
+        .button {
+            display: inline-block;
+            padding: 5px 10px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #417690;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #205067;
+        }
+    </style>
+</head>
+<body style="padding-left: 20px; font-family: 'Segoe UI', system-ui, Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'">
+    <h1>Search Results</h1>
+    <p>{{ result_message|safe }}</p>
+    <a href="{% url 'admin:search_earthquakes' %}" class="button">Search Again</a>
+</body>
+</html>

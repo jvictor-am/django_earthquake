@@ -1,0 +1,9 @@
+{% extends "admin/app_index.html" %}
+
+{% block content %}
+<div style="margin-bottom: 20px;">
+    <a href="{% url 'admin:search_earthquakes' %}" class="button">Search Earthquakes</a>
+</div>
+
+{{ block.super }}
+{% endblock %}

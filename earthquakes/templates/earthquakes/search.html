@@ -1,0 +1,49 @@
+<!-- templates/earthquakes/search.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Earthquakes</title>
+    <style>
+        .button {
+            display: inline-block;
+            padding: 5px 10px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #417690;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #205067;
+        }
+    </style>
+</head>
+<body style="padding-left: 20px; font-family: 'Segoe UI', system-ui, Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'">
+    <div style="display: flex; align-items: center;">
+        <h1>Search for Earthquakes</h1>
+        <a style="margin-left: 20px;" href="/admin/earthquakes/" class="button">
+            Go Back to Earthquakes Admin
+        </a>
+    </div>
+    <form method="post">
+        {% csrf_token %}
+        <label for="min_magnitude">Minimum Magnitude:</label>
+        <input type="number" name="min_magnitude" id="min_magnitude" value="5.0" step="0.1" required>
+        <br>
+        <label for="start_date">Start Date:</label>
+        <input style="margin-top: 10px;" type="date" name="start_date" id="start_date" required>
+        <br>
+        <label for="end_date">End Date:</label>
+        <input style="margin-top: 10px;" type="date" name="end_date" id="end_date" required>
+        <br>
+        <button style="margin-top: 15px;" type="submit" class="button">Search</button>
+    </form>
+</body>
+</html>
